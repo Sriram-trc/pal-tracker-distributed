@@ -27,9 +27,3 @@ create table projects (
 )
 engine = innodb
 default charset = UTF8MB4;
-
-
-
-
-
-11:53
