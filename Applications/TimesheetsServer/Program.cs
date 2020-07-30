@@ -3,6 +3,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Steeltoe.Extensions.Configuration.CloudFoundry;
 using Steeltoe.Extensions.Logging;
+using Steeltoe.Discovery.Client;
+using Steeltoe.Common.Hosting;
 
 namespace TimesheetsServer
 {
@@ -15,6 +17,7 @@ namespace TimesheetsServer
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .UseCloudHosting()
                 .AddCloudFoundry()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
